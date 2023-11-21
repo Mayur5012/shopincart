@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3512309f.css",
+    "main.js": "/static/js/main.056814d3.js",
+    "static/js/787.c875205c.chunk.js": "/static/js/787.c875205c.chunk.js",
+    "static/media/logo_bl_tr.png": "/static/media/logo_bl_tr.505297352c09cbfa102f.png",
+    "static/media/logo-wh-tr.png": "/static/media/logo-wh-tr.c3593ba3c0468fdffeab.png",
+    "index.html": "/index.html",
+    "main.3512309f.css.map": "/static/css/main.3512309f.css.map",
+    "main.056814d3.js.map": "/static/js/main.056814d3.js.map",
+    "787.c875205c.chunk.js.map": "/static/js/787.c875205c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3512309f.css",
+    "static/js/main.056814d3.js"
+  ]
+}
