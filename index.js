@@ -73,7 +73,7 @@ opts.jwtFromRequest = cookieExtractor;
 opts.secretOrKey = process.env.JWT_SECRET_KEY; 
 
 //middlewares
-
+//learn path resolve method
 server.use(express.static(path.resolve(__dirname, 'build')));
 server.use(cookieParser());
 server.use(
