@@ -220,7 +220,7 @@ exports.invoiceTemplate = function(order){
           <!-- start copy -->
           <tr>
             <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;">
-              <p style="margin: 0;">Here is a summary of your recent order. If you have any questions or concerns about your order, please <a href="coderdost@gmail.com">contact us</a>.</p>
+              <p style="margin: 0;">Here is a summary of your recent order. If you have any questions or concerns about your order, please <a href="bpay1009@gmail.com">contact us</a>.</p>
             </td>
           </tr>
           <!-- end copy -->
@@ -237,7 +237,7 @@ exports.invoiceTemplate = function(order){
                 ${order.items.map(item=>`<tr>
                   <td align="left" width="60%" style="padding: 6px 12px;font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;">${item.product.title}</td>
                   <td align="left" width="20%" style="padding: 6px 12px;font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;">${item.quantity}</td>
-                  <td align="left" width="20%" style="padding: 6px 12px;font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;">$${Math.round(item.product.price*(1-item.product.discountPercentage/100),2)}</td>
+                  <td align="left" width="20%" style="padding: 6px 12px;font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;">₹${Math.round(item.product.price*(1-item.product.discountPercentage/100),2)}</td>
                 </tr>`)
 
                 }
