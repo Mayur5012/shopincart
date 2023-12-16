@@ -43,6 +43,9 @@ server.post(
       response.status(400).send(`Webhook Error: ${err.message}`);
       return;
     }
+    console.log('Received signature:', sig);
+    console.log('Received body:', request.body);
+ 
 
     // Handle the event
     switch (event.type) {
