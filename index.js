@@ -31,7 +31,7 @@ const endpointSecret = process.env.ENDPOINT_SECRET;
 
 server.post(
   //changed to this url, it was /webhook
-  'https://drip-360.vercel.app/webhook',
+  'https://dripat360.vercel.app/webhook',
   express.raw({ type: 'application/json' }),
   async (request, response) => {
     const sig = request.headers['stripe-signature'];
