@@ -1,6 +1,5 @@
 const passport = require('passport');
 const nodemailer = require('nodemailer');
-
 let transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 587,
@@ -202,7 +201,7 @@ exports.invoiceTemplate = function(order){
    <!-- Header -->
    <div class="header" style="text-align: center; background-color: #2c3e50; padding: 20px;">
      <a href="https://dripat360.vercel.app/" target="_blank">
-       <img src="./logo_bl_tr.png" alt="DRIP@360" style="max-width: 100px;">
+       <img src="../services/logo-wh-tr.png" alt="DRIP@360" style="max-width: 100px;">
      </a>
    </div>
  
@@ -256,7 +255,7 @@ exports.invoiceTemplate = function(order){
  
    <!-- Footer -->
    <div class="footer">
-     <p>You received this email because we received a request for order from your account. If you didn't request the order, you can <a href="mailto:team.dripatindia@gmail.com">contact us</a>!</p>
+     <p>You received this email because we received a request for order from your account. <br> If you didn't request the order, you can <a href="mailto:team.dripatindia@gmail.com">contact us</a>!</p>
    </div>
  
  </body>
