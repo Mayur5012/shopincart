@@ -59,6 +59,32 @@ exports.fetchOrdersByUser = async (req, res) => {
     }
   };
 
+  // {/* handles cancel order  */}
+  // Add this to your Order.js controller file
+exports.cancelOrder = async (req, res) => {
+  const { id } = req.params;
+  try {
+      const order = await Order.findById(id);
+      if (!order) {
+          return res.status(404).json({ message: 'Order not found' });
+      }
+
+      // Check if the order is cancelable (e.g., order status is pending)
+      if (order.status !== 'pending') {
+          return res.status(400).json({ message: 'Order cannot be canceled' });
+      }
+
+      // Update order status to 'cancelled'
+      order.status = 'cancelled';
+      await order.save();
+
+      res.status(200).json(order);
+  } catch (err) {
+      res.status(500).json(err);
+  }
+};
+
+
   exports.fetchAllOrders = async (req, res) => {
     // sort = {_sort:"price",_order="desc"}
     // pagination = {_page:1,_limit=10}

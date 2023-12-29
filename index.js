@@ -25,6 +25,30 @@ const path = require('path');
 const { Order } = require('./model/Order');
 const { env } = require('process');
 
+
+// Handle form submission
+server.post("/submitForm", (req, res) => {
+  const { email, subject, message } = req.body;
+
+  // Send email to customer care
+  const mailOptionsToCustomerCare = {
+    from: "team.dripatindia@gmail.com",  // replace with your Gmail email address
+    to: {email},    // replace with your customer care email address
+    subject: `New Form Submission - ${subject}`,
+    text: `Email: ${email}\nMessage: ${message}`,
+  };
+
+  transporter.sendMail(mailOptionsToCustomerCare, (error, info) => {
+    if (error) {
+      return res.status(500).send(error.toString());
+    }
+    console.log("Email to customer care sent: " + info.response);
+  });
+
+  res.status(200).send("Form submitted successfully");
+
+});
+
 // Webhook
 
 const endpointSecret = process.env.ENDPOINT_SECRET;
@@ -201,6 +225,7 @@ server.post('/create-payment-intent', async (req, res) => {
     clientSecret: paymentIntent.client_secret,
   });
 });
+
 
 main().catch((err) => console.log(err));
 
