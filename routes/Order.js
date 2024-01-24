@@ -8,10 +8,11 @@ router.post('/', createOrder)
       .delete('/:id', deleteOrder)
       .patch('/:id', updateOrder)
       .get('/',fetchAllOrders)
-      .patch('/cancel/:id', cancelOrder); 
+      // .patch('/:id', cancelOrder); 
       
       
       
-exports.router = router;
+      exports.router = router;
       
+      // .patch('/cancel/:id', cancelOrder); 
       // {/* handles cancel order  */}
