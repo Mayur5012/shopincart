@@ -59,6 +59,18 @@ exports.fetchOrdersByUser = async (req, res) => {
     }
   };
 
+  //my func of cancel
+  exports.cancelOrder= async (req, res) =>{
+    const { id } = req.params;
+    try{
+      const order= await Order.findOneAndUpdate(id, {status: "cancelled"});
+      res.status(200).json(order);
+    }
+    catch(err){
+      res.status(400).json(err);
+    }
+  };
+
   // {/* handles cancel order  */}
   // Add this to your Order.js controller file
 // exports.cancelOrder = async (req, res) => {

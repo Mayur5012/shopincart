@@ -8,7 +8,7 @@ router.post('/', createOrder)
       .delete('/:id', deleteOrder)
       .patch('/:id', updateOrder)
       .get('/',fetchAllOrders)
-      // .patch('/:id', cancelOrder); 
+      .patch('/:id', cancelOrder); 
       
       
       
