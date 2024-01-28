@@ -201,7 +201,8 @@ exports.invoiceTemplate = function(order){
    <!-- Header -->
    <div class="header" style="text-align: center; background-color: #2c3e50; padding: 20px;">
      <a href="https://dripinfinite.vercel.app/" target="_blank">
-       <img src="../services/logo4.png" alt="DRIP@360" style="max-width: 100px;">
+     <span style="color:#fffff; font-weight:400;">DRIPINFINITE</span>
+      //  <img src="\logo4.png" alt="DRIPINFINITE" style="max-width: 100px;">
      </a>
    </div>
  
