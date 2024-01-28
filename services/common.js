@@ -5,7 +5,7 @@ let transporter = nodemailer.createTransport({
   port: 587,
   secure: false, // true for 465, false for other ports
   auth: {
-    user: 'team.dripatindia@gmail.com', // gmail
+    user: 'team.dripinfinite@gmail.com', // gmail
     pass: process.env.MAIL_PASSWORD, // pass
   },
 });
@@ -30,7 +30,7 @@ exports.cookieExtractor = function (req) {
 
 exports.sendMail = async function ({to, subject, text, html}){
     let info = await transporter.sendMail({
-        from: '"DRIPINFINITE" <team.dripatindia@gmail.com>', // sender address
+        from: '"DRIPINFINITE" <team.dripinfinite@gmail.com>', // sender address
         to,
         subject,
         text,
@@ -212,7 +212,7 @@ exports.invoiceTemplate = function(order){
  
    <!-- Content Block -->
    <div class="content">
-     <p>Here is a summary of your recent order. If you have any questions or concerns about your order, please <a href="mailto:team.dripatindia@gmail.com">contact us</a>.</p>
+     <p>Here is a summary of your recent order. If you have any questions or concerns about your order, please <a href="mailto:team.dripinfinite@gmail.com">contact us</a>.</p>
    </div>
  
    <!-- Receipt Table -->
@@ -243,7 +243,7 @@ exports.invoiceTemplate = function(order){
      <div style="display: inline-block; width: 100%; max-width: 50%; min-width: 240px; vertical-align: top;">
        <table>
          <tr>
-           <td style="padding-bottom: 36px; padding-left: 36px;">
+           <td style="padding-bottom: 36px; padding-left: 10px;">
              <p><strong>Delivery Address</strong></p>
              <p>${order.selectedAddress.name}<br>${order.selectedAddress.street}<br>${order.selectedAddress.city},${order.selectedAddress.state},${order.selectedAddress.pinCode}</p>
              <p>${order.selectedAddress.phone}</p>
@@ -255,7 +255,7 @@ exports.invoiceTemplate = function(order){
  
    <!-- Footer -->
    <div class="footer">
-     <p>You received this email because we received a request for order from your account. <br> If you didn't request the order, you can <a href="mailto:team.dripatindia@gmail.com">contact us</a>!</p>
+     <p>You received this email because we received a request for order from your account. <br> If you didn't request the order, you can <a href="mailto:team.dripinfinite@gmail.com">contact us</a>!</p>
    </div>
  
  </body>

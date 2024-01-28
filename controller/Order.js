@@ -71,8 +71,8 @@ exports.fetchOrdersByUser = async (req, res) => {
     }
   };
 
-  // {/* handles cancel order  */}
-  // Add this to your Order.js controller file
+// {/* handles cancel order  */}
+// Add this to your Order.js controller file
 // exports.cancelOrder = async (req, res) => {
 //   const { id } = req.params;
 //   try {
