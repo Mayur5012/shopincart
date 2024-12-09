@@ -15,6 +15,7 @@ const { createProduct } = require('./controller/Product');
 const productsRouter = require('./routes/Products');
 const categoriesRouter = require('./routes/Categories');
 const brandsRouter = require('./routes/Brands');
+const pricesRouter = require('./routes/Price');
 const usersRouter = require('./routes/Users');
 const authRouter = require('./routes/Auth');
 const cartRouter = require('./routes/Cart');
@@ -32,7 +33,7 @@ const endpointSecret = process.env.ENDPOINT_SECRET;
 
 server.post(
   //changed to this url, it was /webhook
-  'https://dripinfinite.vercel.app/webhook',
+  'https://localhost:8080/webhook',
   express.raw({ type: 'application/json' }),
   async (request, response) => {
     const sig = request.headers['stripe-signature'];
@@ -99,20 +100,12 @@ server.use('/products', productsRouter.router);
 // we can also use JWT token for client-only auth
 server.use('/categories', categoriesRouter.router);
 server.use('/brands', brandsRouter.router);
+server.use('/prices', pricesRouter.router);
 server.use('/users', isAuth(), usersRouter.router);
 server.use('/auth', authRouter.router);
 server.use('/cart', isAuth(), cartRouter.router);
 server.use('/orders',isAuth(), ordersRouter.router);
 
-
-// server.use('/products', isAuth(), productsRouter.router);
-// // we can also use JWT token for client-only auth
-// server.use('/categories', isAuth(), categoriesRouter.router);
-// server.use('/brands', isAuth(), brandsRouter.router);
-// server.use('/users', isAuth(), usersRouter.router);
-// server.use('/auth', authRouter.router);
-// server.use('/cart', isAuth(), cartRouter.router);
-// server.use('/orders', isAuth(), ordersRouter.router);
 
 // this line we add to make react router work in case of other routes doesnt match
 server.get('*', (req, res) =>
